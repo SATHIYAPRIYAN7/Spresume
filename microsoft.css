@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: sans-serif;
+}
+    
+.header{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    height: 60px;
+}
+.lefthead{
+    display: flex;
+    align-items: center;
+    
+}
+.righthead{
+    display: flex;
+    margin-right: 50px;
+}
+.righttext{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+.material-symbols-outlined{
+    font-size: 20px;
+    margin-left: 3px;
+}
+.lefthead p{
+    margin-left: 20px;
+    cursor: pointer;
+  
+}
+.lefthead img{
+    margin-left: 50px;
+}
+.lefthead p:hover{
+   border-bottom: 2px solid black;
+}
+
+.righttext p:hover{
+    border-bottom: 2px solid black;
+    cursor: pointer;
+ }
+ .banner{
+    height: 500px;
+ }
+ .bannerimg{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    position: relative;
+ }
+ h1{
+    font-weight:500;
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+ }
+ .bannertext{
+        position: absolute;
+        right: 150px;
+        top: 230px;
+ }
+ .bannertext button{
+    margin-top:20px;
+    height: 40px;
+    width: 100px;
+    background-color: #0067b8;
+    color: #fff!important;
+    font-size:15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+ }
+ .carosel{
+     text-align: center;
+     margin-bottom: 80px;
+ }
+.ico{
+     font-size: xx-large;
+     margin-top: 18px;
+     width: 50px;
+}
+.logocontain{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 40px;
+}
+.logo{
+    margin-right: 50px;
+}
+.logo p{
+    margin-top: 6px;
+    color: #0067b8;
+    text-decoration: underline;
+    font-weight:medium;
+    font-size: medium;
+}
+
+.product{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    overflow: hidden;
+    margin-top:95px;
+    margin-bottom: 80px;
+}
+.products{
+    width: 100%;
+    height: 100%;
+   margin-left: 50px;
+}
+.products img{
+    width: 300px;
+    margin-bottom: 10px;
+}
+.product h2{
+    font-size:30px;
+    margin-bottom: 10px;
+}
+.products:last-child{
+    margin-right: 20px;
+}
+.link{
+    margin-top: 25px;
+    display: flex;
+    color: #0067b8;
+}
+.link:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.game{
+   height:500px;
+  width: 100%;
+   position: relative;
+}
+.gameimg{
+    margin: 0 20px 0 20px;
+    object-fit: contain;
+   height: 100%;
+    
+}
+.gametext button{
+    margin-top:20px;
+    height: 40px;
+    width: 100px;
+    background-color: #0067b8;
+    color: #fff!important;
+    font-size:15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+ }
+ 
+.gametext{
+    position: absolute;
+    color: white;
+    width: 30%;
+    height:250px;
+   top: 100px;
+   left: 130px;
+}
+.bus{
+    margin-top: 100px; 
+      margin-bottom: -40px;
+      margin-left: 50px;
+}
+
+.follow{
+    display: flex;
+   align-items: center;
+    margin-left: 50px;
+    margin-bottom: 100px;
+    
+}
+.follow img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+.back{
+    position: sticky;
+    left: 100%;
+    bottom: 100px;
+    border: none;
+    height: 30px;
+    width: 100px;
+    text-decoration: none;
+    opacity: 0.5;
+    color: black;
+    font-weight: bolder;
+}
+.back a{
+    text-decoration: none;
+    opacity:0.9;
+}
+.footer{
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+    
+    background-color: whitesmoke;
+    color: #616161;
+    font-size: 11px;
+    line-height: 16px;
+    text-decoration: none;
+}
+.footercontent{
+    margin-top: 20px;
+    margin-left: 20px;
+   
+}
+li{
+    list-style-type:none;
+    line-height: 30px;
+}
+.footercontent h4{
+    font-size: 15px;
+}
+li:hover{
+    cursor:pointer;
+    text-decoration: underline;
+}
+.credit{
+    display: flex;
+    font-size: 11px;
+    justify-content:space-between;
+    background-color: whitesmoke;
+    padding-right: 50px;
+}
+
+.credit p{
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+
+}
+
+.creditcontent{
+    display: flex;
+}
+.credit p:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
