@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container{
+    max-width: 1024px;
+    margin: auto;
+} 
+
+.header{
+        width: 1024px;
+        margin: auto;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    padding: 18px 0px;
+}
+.nav a{
+    text-decoration: none;
+    color:white;
+
+}
+.nav_list{
+    display: flex;
+    justify-content: start;
+
+}
+.nav_list li {
+    list-style-type: none;
+    margin: 0 18px;
+    padding: 0 12px;
+}
+.nav_logo{
+    font-weight: 600;
+    font-size: 18px;
+}
+.nav_list li a{
+    font-weight: 600;
+    font-size: 1rem;
+}
+.nav_content{
+    display: flex;
+}
+element.style {
+    padding-top: 3px;  
+}
+#dark_theme{
+    color: white;
+}
+.home_image{
+    width:100%;
+    position: absolute;
+   object-fit: cover;
+    height: 640px;
+    z-index: -1;
+    top: 0;
+
+}
+.home__social {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    column-gap: 2.5rem;
+}
+
+.home__social-link {
+    font-size: 1.2rem;
+    width: max-content;
+    color: white;
+    text-decoration: none;
+}
+
+.home_container{
+        animation: fadeIn 2s;
+      }
+        
+    @keyframes home_container {
+        from {
+          opacity: 0;
+          
+        }
+        to {
+          opacity: 1;
+        
+        }
+      }
+
+.home_container{
+   color: white;
+   padding-top: 110px;
+}
+.home_data-subtitle {
+    padding: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.home_data-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 55px;
+    font-weight: 100;
+    padding-left: 2px;
+    padding-bottom: 40px;
+    padding-top: 10px;
+}
+
+.home_data-title b {
+    font-weight: 800;
+    font-family: 'Raleway', sans-serif;
+}
+
+.home_container .button {
+    padding: 14px 28px;
+    /* margin-left: 20px; */
+    background-color: #235779;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    transition: all .5s;
+}
+
+.home_container .button:hover {
+    background-color: #113c45;
+}
+
+.content_container{
+
+    display: flex;
+    justify-content: end;
+    overflow: hidden;
+}
+.content{
+    display: flex;
+    align-items: center;
+    color:white;
+    background-color: #235779;
+    width: 328px;
+    padding: 1.5rem 1rem;
+    right: 1%;
+    overflow: hidden;
+    padding-bottom: 18px;
+
+}
+.content_img img{
+    width: 170px;
+    
+
+    transition: transform .3s ease;
+    cursor: pointer;
+    
+}
+.content_img{
+    overflow: hidden;
+}
+.content_details{
+    width: 50%;
+    font-weight: 600;
+}
+.content_img img:hover{
+    transform: scale(1.2);
+}
+/* --------------about---------- */
+
+.about_section{
+    padding: 200px 0px;
+    
+}
+.about{
+
+ display: flex;
+ 
+}
+.about_content{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.about_img{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+}
+.about_img img{
+    transition: transform .3s ease;
+   
+}
+.about_content h2{
+      color: #235779;
+     
+   
+}
+.about_content p{
+    color: #235779;
+    padding: 30px 0;
+    font-size: 17px;
+    font-weight: 500;
+    padding-right: 40px;
+    margin-bottom: 20px;
+}
+.about_image_overlay{
+    overflow: hidden;
+}
+.about_img1{
+    width: 195px;
+    
+   
+}
+.about_img1:hover,.about_img2:hover{
+    transform: scale(1.2);
+}
+.about_img2{
+    width: 250px;
+   
+}
+.about_content .button{
+    padding: 14px 28px;
+    /* margin-left: 20px; */
+    background-color: #235779;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    width: 190px;
+    font-weight: 600;
+    transition: all .5s;      
+}
+.about_content .button:hover{
+    background-color: #113c45;
+}
+
+/* ----------------discover-------------- */
+.discover_heading{
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 17 px;
+    font-weight: 600;
+    color: #235779;
+}
+.discover_img_conatin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+.discover_img{
+    position: relative;
+}
+.discover_img_conatin .discover_img .img2{
+    width: 240px;
+    transition: transform .3s ease;
+}
+.discover_img_conatin .image_content{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: white;
+}
+.discover_img_conatin .discover_img .img1{
+    width: 200px;
+    transition: transform .3s ease;
+}
+.discover_img_conatin .discover_img .img3{
+    width: 200px;
+    transition: transform .3s ease;
+}
+.discover_img_conatin .discover_img{
+    overflow: hidden;
+}
+.discover_img img:hover{
+    transform: scale(1.2);
+}
+.discover_img p{
+        font-size: 12px;
+}
+.discover{
+    margin-bottom: 190px;
+}
+
+/*------------ EXPERIENCE SECTION =----------- */
+.section_title{
+    text-align: center;
+    color: #235779;
+}
+.experience_section{
+    padding: 0 0 200px 0;
+}
+.experience_content{
+    display: flex;
+    /* text-align: center; */
+    font-family: 'Open Sans', sans-serif;
+    padding: 40px 0 ;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+
+.experience_data{
+    padding: 0 20px;
+}
+.experience_number{
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 7px;
+    color:#235779;
+}
+.experience_description{
+    font-size: 14px;
+    color: #235779;
+}
+.experience_img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.experience_img .experience_image-overlay{
+}
+.experience_image-overlay{
+    position: relative;
+}
+.experience_img .experience_image-overlay .experience_img-one{
+    width: 100%;
+    width: 434px;
+    height: 295px;
+}
+.experience_img .experience_image-overlay .experience_img-two{
+    width: 250px;
+    position: absolute;
+    top: -235px;
+    left: 101px;
+    height: 346px;
+   
+}
