@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: LabGrotesque,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.header{
+    margin:20px 60px;
+    position: sticky;
+    top: 0;
+    background-color: hsla(0,0%,100%,.8);
+    height: 50px;
+    z-index: 1000;
+}
+
+.header_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.container{
+    max-width: 1024px;
+    margin: auto;
+}
+.logo{
+    width: 1px;
+   
+}
+.header_menu a{
+    text-decoration: none;
+    padding-right:40px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #767676;
+    font-family: LabGrotesque,Helvetica Neue,Helvetica,Arial,sans-serif;  
+    
+}
+.header_menu a:hover{
+    color: #333;
+    
+}
+.header_menu{
+    text-align: center;
+    margin-top: -40px;
+}
+
+.header_button{
+    
+}
+
+.button {
+    font-family: LabGrotesque,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    padding: 15px 27px;
+    border-radius: 25px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    background-color: #04ddb2;
+    transition: .2s ease-in-out;
+}
+.button:hover{
+    transform: scale(1.06);
+}
+.header_button{
+    display: flex;
+    align-items: center;
+}
+
+.header_button .button_ham{
+      display: none;
+   font-size: 30px;
+}
+
+.about{
+    padding-top: 75px;
+    padding-bottom: 95px;
+}
+.about_container{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+}
+
+.about_video img{
+    width: 1000px;
+    border-radius: 25px;
+   
+}
+.about_heading{
+    text-align: center;
+}
+.about_heading h1{
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 22px;
+    font-weight: 900;
+    cursor: default;
+    color: #333;
+}
+.tour{
+    color: #04ddb2;
+}
+.about_heading p{
+    font-size: 26px;
+    color: #333;
+    line-height: 1.3;
+    padding-bottom: 80px;
+}
+.about_video{
+    transition: all 1s;
+}
+.about_video:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    transform: scale(1.03);
+    
+}
+.section-heading{
+    text-align: center;
+}
+.button2{
+    font-family: LabGrotesque,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    padding: 14px 38px;
+    border-radius: 25px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    background-color: #04ddb2;
+    transition: .2s ease-in-out;
+    text-align: center;
+}
+.button2:hover{
+    transform: scale(1.06);
+}
+.down h2{
+    font-size: 67px;
+    padding-bottom: 30px;
+    font-weight: 700;
+    color: #333;
+}
+.download{
+ text-align: center;
+}
+
+main{
+    padding-bottom: 100px;
+}
+
+.footer_container{
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.footer-content{
+    line-height: 2.8;
+    padding-top: 20px;
+
+}
+    .footer-content{
+        width: 153px;
+    }
+
+.footer_container{
+    padding-top: 30px;
+    font-size: 15px;
+    padding-bottom: 100px;
+}
+.footer-content svg{
+    padding-top: 10px;
+}
+.footer-content .p:hover{
+    cursor: pointer;
+     color: #767676;
+}
+
+@media screen and (max-width: 950px) {
+    .header_menu a{
+        display: none;
+    }
+    .header_button .button{
+        display: none;
+    }
+    .header_button .button_ham{
+        display: flex;
+        position: relative;
+        right: 8%;
+        top: 8%; 
+    }
+    .about_video img{
+        width: 100%;
+        border-radius: 25px;
+       
+    }
+    .about_heading h1 .about_heading p{
+        font-size: 50px;
+    }
+}
+@media screen and (max-width: 750px){
+    .about_heading h1 {
+          font-size: 45px;
+    }
+    .about_heading p{
+          font-size: 17px;
+    }
+    .down h2{
+        font-size: 42px
+    }
+    .button2{
+        font-family: LabGrotesque,Helvetica Neue,Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        padding: 14px 38px;
+        border-radius: 25px;
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        background-color: #04ddb2;
+        transition: .2s ease-in-out;
+        text-align: center;
+    }
+
+}
+@media screen and (max-width: 630px){
+    .footer_container{
+        
+        text-align: center;
+        flex-wrap: wrap-reverse;
+    }
+}
