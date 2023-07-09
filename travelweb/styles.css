@@ -947,7 +947,7 @@ input {
     padding: 0;
   }
   .subscribe__container {
-    background-color: var(--first-color-second);
+    background-color: #235779;
     padding: 3.5rem 0;
   }
   .subscribe__input {
