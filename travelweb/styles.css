@@ -645,7 +645,7 @@ input {
 
 /*=============== SUBSCRIBE ===============*/
 .subscribe__bg {
-  background-color: var(--first-color-second);
+  background-color: #235779;
   padding: 2.5rem 0;
 }
 
