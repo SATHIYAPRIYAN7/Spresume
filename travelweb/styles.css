@@ -341,7 +341,7 @@ input {
 }
 
 .home__info {
-  background-color: var(--first-color);
+  background-color:#235779;
   display: flex;
   padding: 1.5rem 1rem;
   align-items: center;
@@ -379,7 +379,7 @@ input {
 /*=============== BUTTONS ===============*/
 .button {
   display: inline-block;
-  background-color: var(--first-color);
+  background-color: #235779;
   color: var(--white-color);
   padding: 1rem 2rem;
   font-weight: var(--font-semi-bold);
