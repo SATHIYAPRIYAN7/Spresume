@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Racing+Sans+One&family=Roboto:wght@100&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.container{
+    max-width: 425px;
+    margin: auto;
+}
+/* .header{
+    position: sticky;
+    top: 0%;
+    z-index: -10;
+} */
+
+.header,.about,.project,.contact{
+    background-color: black;
+    min-height: 100vh;
+    min-width: 100vw;
+    color: white;
+    transition: all 0.5s;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1.3rem;
+}
+
+ .menu{
+    position: fixed;
+    right: -100%;
+    top: 0;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    background:#e91e63;
+    height: 100%;
+    padding-top: 100px;
+    z-index: 100;
+    transition: all 0.5s;
+}
+.menu9{
+    right: 0%;
+    transition: all 0.5s;
+}
+.anch{
+   padding: 20px 80px;
+   text-decoration: none;
+   color: white;
+   cursor:pointer;
+}
+.anch:hover{
+    background-color: black;
+}
+
+i.fa-xmark{
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    padding-right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+} 
+.menu_bar{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.logo h1{
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.logo h1 span{
+    color: #e91e63;
+}
+
+.hero_img{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.hero_img img{
+    width: 350px;
+    order: 1;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+.hero_text{
+    order: 2;
+    text-align: center;
+    font-size: 20px;
+}
+.hero_text p{
+    font-size: 15px;
+    font-weight: lighter;
+    opacity: 0.9;
+}
+.hero_text h1 span{
+    color: #e91e63;
+}
+.hero_icon{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30%;
+    left: 0;
+}
+.hero_icon a{
+    color:white;
+    padding: 5px 8px;
+    border-radius: 50%;
+    margin: 10px;
+    font-size: 15px;
+}
+
+/* -----------about---------- */
+.about{
+    margin-bottom:-15px;
+}
+.about_img{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.about_img img{
+    border-radius: 15px;
+    width: 200px;
+}
+.about_text{
+    text-align: center;
+    font-size: 16px;
+    padding: 0px 18px;
+}
+.about_text h1 span{
+    color: #e91e63;
+}
+.about_text h1{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.about_menu{
+    display: flex;
+    justify-content: ;
+    margin-top: 40px;
+    margin-left: 10px;
+    
+}
+
+.about_menu h5{
+           margin-right:2rem;
+           position: relative;
+           cursor: pointer;
+}
+
+.about_menu h5::after{
+    content: ' ';
+    height: 3px;
+    position: absolute;
+    width: 0%;
+    background: #e91e63;
+    bottom: -8px;
+    left: 0;
+    transition: 0.5s;
+
+}
+.about_menu h5.active-link::after{
+    width: 50%;
+}
+
+.skills{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.skills ul li span{
+    color: #e91e63;
+    font-size: 12px;
+}
+
+li{
+    list-style: none;
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.skills{
+    display: none;
+}
+
+.active-tab{
+    display: block;
+}
+
+/* ------------portfolio----------- */
+.project{
+    padding-top: 25px;
+}
+.project_heading{
+    text-align: center;
+    margin-bottom:40px;
+    font-size: 1.5rem;
+color: #e91e63;
+}
+
+.project_heading h1 span{
+    color: white;
+}
+.project_wrap{
+           width: 250px;
+          
+           position: relative;
+           overflow: hidden;
+           border-radius: 15px;
+           margin-bottom: 50px
+          
+}
+.project_wrap img{
+    transition: all 0.5s;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.project_text{
+    background: linear-gradient(rgba(0,0,0,0.6),#e91e63);
+    position: absolute;
+    top: 350px;
+   height: 100%;
+   padding-top: 100px;
+    text-align: center;
+    transition: all 0.5s;
+}
+.project_wrap:hover img{
+    transform: scale(1.1);
+}
+.project_text a{
+    color: white;
+}
+.project_wrap:hover .project_text{
+    top: 0px;
+}
+.project_img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project_text p{
+    font-size: 14px;
+    margin: 10px 0px;
+    margin-bottom: 25px;
+}
+
+.project_text a{
+    background-color: white;
+    color: #e91e63;
+    padding: 7px 11px;
+    border-radius: 50%;
+    font-size: 18px;
+
+}
+
+.button{
+    text-align: center;
+    padding-bottom: 20px;
+    transition: 0.5s;
+}
+.button button{
+    color: white;
+    background-color: transparent;
+    border: #e91e63 1px solid;
+    border-radius: 5px;
+    padding: 10px 18px;
+    margin: auto auto;
+    font-size: 15px;
+    transition: 0.5s;
+}
+.button button:hover{
+    background-color: #e91e63;
+
+}
+
+.project_img11{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+/* ------------contact------------ */
+.contact{
+    padding-top: 50px;
+}
+.contact_content{
+    padding-left: 25px;
+}
+.contact_text h1{
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contact_text h1 span{
+    color: #e91e63;
+
+}
+.contact_text p{
+      font-size: 15px;
+      padding: 5px;
+     
+}
+.contact_text p i{
+    color: #e91e63;
+    margin-right: 5px;
+}
+
+.but2{
+    color: white;
+    background-color: #e91e63;
+    border: #e91e63 1px solid;
+    border-radius: 5px;
+    padding: 10px 18px;
+    margin: auto auto;
+    font-size: 15px;
+    transition: 0.5s;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.but2 a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.but2:hover{
+    background-color: #5b122a;
+    border-radius: 0px;
+}
+
+.contact_form form input,textarea{
+    border:none;
+    background-color: rgb(46, 45, 45);
+    border-radius: 5px;
+    width: 80%;
+    padding-left: 9px;
+    padding-top: 10px;
+    outline: none;
+    color: white;
+}
+.contact_form form input{
+    padding: 10px 9px;
+    margin-bottom: 20px;
+   
+}
+.contact_form form input:hover,textarea:hover{
+    border: #e91e63 1px solid;
+}
+.contact_icon a{
+    font-size: 25px;
+    color: white;
+    padding-right: 19px;
+    margin: 5px 0px;
+}
+.contact_icon{
+    margin: 5px 0px;
+}
