@@ -14,7 +14,7 @@ body{
 }
 
 .container{
-    max-width: 425px;
+    max-width: 1024px;
     margin: auto;
 }
 /* .header{
@@ -52,6 +52,9 @@ body{
     padding-top: 100px;
     z-index: 100;
     transition: all 0.5s;
+}
+.menu98{
+    display: none;
 }
 .menu9{
     right: 0%;
@@ -414,4 +417,90 @@ color: #e91e63;
     color: white;
     font-size: 10px;
     padding-bottom: 10px;
+}
+
+
+
+@media only screen and (min-width: 768px){
+
+    .hero{
+        display: flex;
+       flex-direction: row;
+        margin-top: 1.5rem;
+        justify-content: space-between;
+    }
+
+    .hero_text{
+        order: 1;
+        flex-basis: 50%;
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      margin-top: 50px;
+    }
+    
+    .hero_img{
+        order: 2;
+        flex-basis: 50%;
+       margin-top: 50px;
+    }
+    .hero_img img{
+        width: 520px;
+        padding-left: 40px;
+
+    }
+   .cv{
+    display: none;
+   }
+   .about_text{
+    font-size: 25px;
+   }
+   .skills li{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+   }
+   .about_menu{
+    justify-content: center;
+}
+.project_img{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.project_img11{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.project_wrap{
+    margin: 20px;
+}
+.contact_text h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.contact_form{
+    width: 100%;
+}
+.menu_bar{
+    display:none;
+}
+
+.menu98{
+    display: block;
+}
+.menu98 a{
+    margin: 0px -45px;
+    font-size: 13px;
+}
+.menu98 a:hover{
+    color: #e91e63;
+}
+
 }
