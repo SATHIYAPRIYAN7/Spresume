@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./asign2.css">
+</head>
+<body>
+    <h1>THE DRUM KIT</h1>
+    <div>
+    <button data-key="87" style="background-image: url('https://tse4.mm.bing.net/th?id=OIP.kVvJfbmILSrFXlXd0zXp6gHaHm&pid=Api&P=0&h=180');" onclick="play()">w</button>
+    <button data-key="65" style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.StIPhDhmijjy7DxOQ0E2eQHaHa&pid=Api&P=0&h=180');" onclick="play()">a</button>
+    <button data-key="83" style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.KWatqLzg14CTidUrU2ZYKwHaF-&pid=Api&P=0&h=180');" onclick="play()">s</button>
+    <button data-key="68" style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.PSmP2kWkxV_3Xf-HiW-TmQHaEl&pid=Api&P=0&h=180');" onclick="play()">d</button>
+    <button data-key="74" style="background-image: url('https://tse4.mm.bing.net/th?id=OIP.KIR6diBRXIJS6gp-7t8gYAHaHa&pid=Api&P=0&h=180');" onclick="play()">j</button>
+    <button data-key="75" style="background-image: url('https://tse3.mm.bing.net/th?id=OIP.0-bn98SEjBPMcZz212v9MwAAAA&pid=Api&P=0&h=180');" onclick="play()">k</button>
+    <button data-key="76" style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.bnuEJr103TVIiRh4qb2nIwHaHa&pid=Api&P=0&h=180');" onclick="play()">l</button>
+</div>
+
+    <audio data-key="87" src="./s1.wav" id="audio1"></audio>
+    <audio data-key="65" src="./s2.wav" id="audio2"></audio>
+    <audio data-key="83" src="./s3.wav" id="audio3"></audio>
+
+    <audio data-key="68" src="./s4.wav" id="audio4"></audio>
+    <audio data-key="74" src="./s5.wav" id="audio5"></audio>
+    <audio data-key="75" src="./s6.mp3" id="audio6"></audio>
+    <audio data-key="76" src="./s7.wav" id="audio7"></audio>
+
+
+
+    
+        <script>
+            window.addEventListener("keydown",function(e){
+                const audio=document.querySelector(`audio[data-key="${e.keyCode}"]`)
+                audio.currentTime=0;
+                audio.play();
+            });
+      
+
+    </script>
+    
+</body>
+</html>

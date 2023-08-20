@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #a06060;
+}
+
+button{
+    padding:40px 40px 0px 40px;
+    margin-bottom: 90px;
+    margin-right:20px ;
+    font-size: 100px;
+    color: #da5494;
+    text-shadow: 2px 2px 0px white;
+    border-radius: 9px;
+    border: solid 10px black;
+}
+
+h1{
+    text-align: center;
+    padding-top: 70px;
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 4px red;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+     min-height: 100vh;
+}
