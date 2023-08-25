@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="px-6 py-3">
+       <input type="text" class="w-full border border-black h-10 pl-3 border-2" id="input-el" ></input>
+       <button class=" bg-green-500 px-8 py-2 mt-2 text-white font-semibold rounded-md hover:bg-green-800" id="input-btn">SAVE INPUT</button>
+      
+       
+    <div id="ul-el">
+
+    </div>
+
+
+
+    
+
+    <script>
+         let input=[];
+         const  ulEl=document.getElementById("ul-el");
+         const inputEl=document.getElementById("input-el");
+         const inputBtn=document.getElementById("input-btn");
+
+         inputBtn.addEventListener("click",()=>{
+            input.push(inputEl.value)
+            inputEl.value="";
+            render()
+         })
+
+         function render(){
+            let items=""
+                for(let i=0;i<input.length;i++){
+                   items+=`<p> ${input[i]}</p>`
+                }
+
+                ulEl.innerHTML=items;
+            
+         }
+
+
+    </script>
+</body>
+</html>
