@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .square{
+        background-color: white;
+    position: relative;
+    width: 75px;
+    height: 75px;
+    left: 38px;
+    top: 40px;
+    }
+
+    #circle {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: green;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.triangle{
+    background-color: transparent;
+    position: relative;
+    left: 38px;
+    top: 40px;
+    width: 0;
+    height: 0;
+    border-bottom: 75px solid white;
+    border-right: 75px solid transparent;
+}
+
+button{
+    margin-top: 30px;
+}
+
+</style>
+<body>
+     <div id="circle">
+
+        <div class="square" id="shape"></div>
+
+     </div>
+
+     <button id="button1">change color</button>
+     <button id="button2">change shape</button>
+
+     <script>
+        const button1=document.getElementById("button1");
+        const button2=document.getElementById("button2");
+        const shape=document.getElementById("shape");
+
+        button1.addEventListener("click",()=>{
+            let arr=["red","yellow","green","blue"];
+            let ran=Math.floor(Math.random()*4);
+            circle.style.backgroundColor=arr[ran]
+        })
+
+        button2.addEventListener("click",()=>{
+            if(shape.classList.contains("square")){
+               shape.classList.remove("square")
+               shape.classList.add("triangle")
+            }else{
+                shape.classList.remove("triangle")
+               shape.classList.add("square")
+            }
+        })
+     </script>
+</body>
+</html>
