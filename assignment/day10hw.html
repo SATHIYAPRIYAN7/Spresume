@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+   body{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: blue;
+   }
+   .btn{
+      border:solid 2px black;
+      padding: 19px;
+      background-color: black;
+      color:white;
+      border-radius: 5px;
+      }
+</style>
+<body class="boddy" id="body">
+   
+       <button class=" btn text-4xl scale-50 hover:scale-75" id="button">Change Background</button>
+   
+    
+    <script>
+         const btn=document.getElementById("button");
+         const boddy=document.getElementById("body");
+          
+        let arr=["red","yellow","purple","green","brown","violet","blue"]
+      btn.addEventListener("click",()=>{
+              let randomNum= Math.floor(Math.random()*7);
+              console.log(randomNum);
+              boddy.style.backgroundColor=arr[randomNum];
+      })
+
+    </script>
+</body>
+</html>
