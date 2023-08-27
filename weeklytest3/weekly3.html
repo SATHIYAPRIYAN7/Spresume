@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+    border: solid 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    body{
+    height: 100vh;
+    }
+    .btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 78px;
+    }
+    .canvas{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+         margin-top: 0;
+         
+    }
+
+</style>
+<body>
+    <div class="btn">
+    <button id="delete" >delete</button>
+    <button id="undo">undo</button></div>
+    <div class="canvas">
+    <canvas id="canvas"></canvas></div>
+
+
+    <script>
+        const canvas=document.getElementById("canvas");
+        const delete1=document.getElementById("delete");
+        const undo1=document.getElementById("undo");
+        canvas.width=900;
+        canvas.height=550;
+
+        let context=canvas.getContext("2d");
+        let start_back="white";
+        context.fillStyle=start_back;
+        context.fillRect(0,0,canvas.width,canvas.height);
+
+        let draw_color="black";
+        let draw_width="2";
+        let is_drawing=false;
+
+        let restore=[];
+        let index=-1;
+
+        canvas.addEventListener("touchstart",start,false);
+        canvas.addEventListener("touchmove",draw,false);
+        canvas.addEventListener("mousedown",start,false);
+        canvas.addEventListener("mousemove",draw,false);
+
+        canvas.addEventListener("touchend",stop,false);
+        canvas.addEventListener("mouseup",stop,false);
+        canvas.addEventListener("mouseout",stop,false);
+
+
+        function start(event){
+            is_drawing=true;
+            context.beginPath();
+            context.moveTo(event.clientX-canvas.offsetLeft,event.clientY-canvas.offsetTop);
+            event.preventDefault();
+        }
+
+        function draw(event){
+            if(is_drawing){
+                context.lineTo(event.clientX-canvas.offsetLeft,event.clientY-canvas.offsetTop);
+                context.strokeStyle=draw_color;
+                context.lineWidth=draw_width;
+                context.lineCap="round";
+                context.lineJoin="round";
+                context.stroke();
+            }
+        }
+
+        function stop(event){
+            if(is_drawing){
+                context.stroke();
+                context.closePath();
+                is_drawing=false;
+            }
+            event.preventDefault();
+
+            if(event.type!="mouseout"){
+            restore.push(context.getImageData(0,0,canvas.width,canvas.height ))
+            index+=1;
+            }
+        }
+             
+        delete1.addEventListener("click",function clear(){
+            context.fillStyle=start_back; 
+            context.clearRect(0,0,canvas.width,canvas.height);
+            context.fillRect(0,0,canvas.width,canvas.height);
+            //location.reload();
+            restore=[];
+            index=-1;
+        });
+
+        undo1.addEventListener("click",()=>{
+            if(index<=0){
+                context.fillStyle=start_back; 
+            context.clearRect(0,0,canvas.width,canvas.height);
+            context.fillRect(0,0,canvas.width,canvas.height);
+            }else{
+                index-=1;
+                restore.pop();
+                context.putImageData(restore[index],0,0);
+            }
+        })
+        
+    </script>
+</body>
+</html>
