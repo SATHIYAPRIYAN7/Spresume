@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+    .key{
+        min-width: 30px;
+        box-shadow: 	0px 0px 11px 1px rgba(0,0,0,0.14),
+		0px 0px 19px 14px rgba(0,0,0,0.03),
+		0px 0px 26px 4px rgba(0,0,0,0.14);
+        border:	1px solid rgba(0,0,0,0); 
+        padding:9px 20px;
+        border-radius: 3px;
+        /* text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1); */
+    }
+    .green{
+        color: chartreuse;
+        font-weight: bold;
+    }
+    .keycode{
+        font-size: 40px;
+        box-shadow: 	0px 0px 11px 1px rgba(0,0,0,0.14),
+		0px 0px 19px 14px rgba(0,0,0,0.03),
+		0px 0px 26px 4px rgba(0,0,0,0.14);
+        border:	1px solid rgba(0,0,0,0);
+        color: chartreuse;
+        padding: 20px;
+        font-weight: bold;
+    }
+
+</style>
+<body>
+    <div id="keyPressed">
+
+    </div>
+
+
+    <script>
+        const keyPressed1=document.getElementById("keyPressed");
+        keyPressed1.innerHTML=`<h1 class="key">Press any keyboard key </h1>`
+
+         document.addEventListener("keydown",function(event){
+            let keycode=event.keyCode;
+            let key=event.key;
+            console.log(keycode);
+
+            keyPressed1.innerHTML=`<h1 class="key">You Pressed :<span class="green"> ${key}</span> </h1>
+            <p class="keycode">${keycode}</p> `;
+            
+         })
+
+    </script>
+</body>
+</html>
