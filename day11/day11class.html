@@ -6,61 +6,108 @@
     <title>Document</title>
 </head>
 <style>
-    div{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        flex-direction: column;
-    }
-    .key{
-        min-width: 30px;
-        box-shadow: 	0px 0px 11px 1px rgba(0,0,0,0.14),
-		0px 0px 19px 14px rgba(0,0,0,0.03),
-		0px 0px 26px 4px rgba(0,0,0,0.14);
-        border:	1px solid rgba(0,0,0,0); 
-        padding:9px 20px;
-        border-radius: 3px;
-        /* text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-             0px 8px 13px rgba(0,0,0,0.1),
-             0px 18px 23px rgba(0,0,0,0.1); */
-    }
-    .green{
-        color: chartreuse;
-        font-weight: bold;
-    }
-    .keycode{
-        font-size: 40px;
-        box-shadow: 	0px 0px 11px 1px rgba(0,0,0,0.14),
-		0px 0px 19px 14px rgba(0,0,0,0.03),
-		0px 0px 26px 4px rgba(0,0,0,0.14);
-        border:	1px solid rgba(0,0,0,0);
-        color: chartreuse;
-        padding: 20px;
-        font-weight: bold;
-    }
-
+    #container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-image: url(https://cdn.pixabay.com/photo/2016/11/18/22/21/restaurant-1837150_1280.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1% 0%;
+}
+#form_container {
+    width: 30%;
+    height: 100%;
+    background-color: white;
+    padding: 1%;
+}
+#form_container>h1 {
+    text-align: center;
+    height: 10%;
+    margin: 0%;
+}
+h1 {
+    color: maroon;
+}
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 90%;
+    background-color: white;
+}
+label {
+    color: maroon;
+    font-size: 130%;
+    font-weight: bolder;
+}
+#calcbtn {
+    width: 100%;
+    padding: 4% 0%;
+    font-size: 130%;
+    background-color: maroon;
+    color: white;
+    border: 2px solid grey;
+}
 </style>
 <body>
-    <div id="keyPressed">
+    <div id="container">
+        <div id="form_container">
+          <h1>Charles' Tip Calculator</h1>
+              <form id="form">
+                  <label>
+                      How much was your bill?<br>
+                      Rs. <input type="number" id="Amount" fdprocessedid="6bajwd"><br>
+                  </label>
+                  <label>
+                      How was your service?<br>
+                      <select id="Squality" fdprocessedid="4l2p7q">
+                          <option disabled="" selected="" value="0">-- Choose an option --</option>
+                          <option value="0.3">30% - Outstanding</option>
+                          <option value="0.2">20% - Good</option>
+                          <option value="0.15">15% - It was okay</option>
+                          <option value="0.1">10% - Bad</option>
+                          <option value="0.05">5%  - Terrible</option>
+                      </select>
+                  </label>
+                  <label>
+                      How many people are sharing the bill?<br>
+                      <input type="number" id="totalPeople" fdprocessedid="kswrsc"> people
+                  </label>
+                    <button type="button" id="calcbtn" fdprocessedid="dzts1f"> Calculate!</button>
+                    <label for="tip" style="text-align: center; width: 100%; display: inline;" id="tiplabel">
+                      Tip Amount<br>
+                      <p  id="totaltip" style="text-align:center ; color:black;  box-shadow: 	0px 0px 11px 1px rgba(0,0,0,0.14),
+                      0px 0px 19px 14px rgba(0,0,0,0.03),
+                      0px 0px 26px 4px rgba(0,0,0,0.14);
+                      border:	1px solid rgba(0,0,0,0); width: 80px; margin: auto; margin-top: 10px; font-size: 20px;">Rs.15</p>
+                    </label>
+              </form>
+            </div>
+      </div>
 
-    </div>
 
 
-    <script>
-        const keyPressed1=document.getElementById("keyPressed");
-        keyPressed1.innerHTML=`<h1 class="key">Press any keyboard key </h1>`
+      <script>
+         const amount=document.getElementById("Amount");
+         const discount=document.getElementById("Squality");
+         const people=document.getElementById("totalPeople");
+         const button1=document.getElementById("calcbtn");
+         const tip=document.getElementById("totaltip");
+         const tiplabel=document.getElementById("tiplabel")
 
-         document.addEventListener("keydown",function(event){
-            let keycode=event.keyCode;
-            let key=event.key;
-            console.log(keycode);
+         tiplabel.style.display="none";
 
-            keyPressed1.innerHTML=`<h1 class="key">You Pressed :<span class="green"> ${key}</span> </h1>
-            <p class="keycode">${keycode}</p> `;
-            
+         button1.addEventListener("click",()=>{
+            let total= (amount.value*discount.value)/people.value;
+            total=total.toFixed(2);
+            tip.textContent="Rs."+total;
+            tiplabel.style.display="inline";
          })
 
-    </script>
+      </script>
 </body>
 </html>
