@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: whitesmoke;
+        height: 250px;
+    }
+    .sub{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+    }
+    textarea{
+        box-shadow: 4px 5px 9px black;
+    }
+    button{
+        margin-top: 20px;
+        font-size: 16px;
+        padding: 10px 15px;
+        box-shadow: 4px 5px 9px black;
+        background-color: rgb(5, 8, 96);
+        color: white;
+        border: 1px white solid;
+    }
+    #colorPicker{
+    width: 90px;
+    height: 35px;
+    }
+    .sticky{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        max-width: 1024px;
+        margin: auto;
+        justify-content: center;
+    }
+    .insdiv{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+         width: 250px;
+         height: 242px;
+          /* background-color: blue; */
+          margin: 10px;
+          border-top: 7px solid rgb(40, 39, 39);
+          border-radius: 10px;
+          box-shadow: 4px 4px #f2f2f2;
+          color: white;
+          padding-left: 10px;
+          padding-top: 8px;
+    }
+    p{
+        margin-top: 186px;
+        color: red;
+        cursor: pointer;
+    }
+
+</style>
+<body>
+    <div class="container">
+         <div class="header">
+            <textarea name="" id="notes" cols="70" rows="8" placeholder="// Write a Note here"></textarea>
+            <div class="sub">
+            <input type="color" name="" id="colorPicker">
+            <button id="button1">Add Notes</button></div>
+         </div>
+          <div class="sticky" id="sticky1">
+            
+          </div>
+
+    </div>
+
+
+
+
+    <script>
+          const notes=document.getElementById("notes");
+          const colors=document.getElementById("colorPicker");
+          const button1=document.getElementById("button1");
+        const stick=document.getElementById("sticky1");
+           
+        
+        button1.addEventListener("click",()=>{
+
+            if(notes.value==""){
+                window.alert("You can't add a empty note")
+            }else{
+            let newNote = document.createElement("div");
+    newNote.classList.add("insdiv");
+    newNote.style.backgroundColor = colors.value;
+    newNote.textContent = notes.value;
+
+    const deleteButton = document.createElement("p");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", () => {
+            stick.removeChild(newNote);
+        });
+
+        newNote.appendChild(deleteButton);
+
+    stick.insertBefore(newNote, stick.firstChild);
+
+    notes.value="";
+      } })
+         
+
+    </script>
+</body>
+</html>
