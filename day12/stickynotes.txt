@@ -1,1 +1,26 @@
+# Sticky Notes Web App
+
+This is a simple web application that allows users to create and manage sticky notes.
+
+## Usage
+
+1. Open `index.html` in a web browser.
+2. Type your note in the text area.
+3. Choose a background color for the sticky note using the color picker.
+4. Click the "Add Notes" button to create a new sticky note with the entered text and chosen color.
+5. To delete a sticky note, click the "Delete" button on the note.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+
+## Features
+
+- Create and customize sticky notes.
+- Choose background colors for notes.
+- Delete unwanted notes.
+
+
 
