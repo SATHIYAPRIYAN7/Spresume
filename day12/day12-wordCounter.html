@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: salmon;
+    font-family: cursive;
+}
+.container {
+    background-color: lightpink;
+    width: 400px;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.textarea {
+    resize: none;
+    width: 100%;
+    height: 100px;
+    font-size: 18px;
+    font-family: sans-serif;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 2px darkgray;
+}
+.counter-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+.counter-container p {
+    font-size: 18px;
+    color: gray;
+}
+.total-counter {
+    color: slateblue;
+}
+.remaining-counter {
+    color: orangered;
+}
+</style>
+    <body>
+        <div class="container">
+          <h2>Real-time Charater Counter</h2>
+          <textarea id="textarea1" class="textarea" placeholder="Please write your text here..." maxlength="50"></textarea>
+          <div class="counter-container">
+            <p>
+              Total Charaters:
+              <span class="total-counter" id="total-counter">0</span>
+            </p>
+            <p>
+              Remaining:
+              <span class="remaining-counter" id="remaining-counter">50</span>
+            </p>
+          </div>
+        </div>
+
+        
+    <script>
+        const text=document.getElementById("textarea1");
+        const total=document.getElementById("total-counter");
+        const remain=document.getElementById("remaining-counter");
+           total.textContent=0;
+           remain.textContent=50;
+        text.addEventListener("input",()=>{
+            let charcount=text.value.length;
+            total.textContent=charcount;
+            remain.textContent=50-charcount;
+        })
+    </script>
+</body>
+</html>
