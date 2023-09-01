@@ -1,1 +1,37 @@
+# Real-time Character Counter Web Page
+
+This is a simple web page that features a real-time character counter for a text area. Users can type text into the text area, and the character count is updated in real-time.
+
+## Technologies Used
+
+- HTML
+- CSS
+
+## Usage
+
+1. Open the `index.html` file in a web browser.
+
+2. You will see a text area with a character counter below it.
+
+3. Start typing in the text area, and you'll notice that the "Total Characters" count increases as you type.
+
+4. The "Remaining" count decreases as you type, indicating how many characters you have left.
+
+5. You can't exceed a maximum limit of 50 characters due to the `maxlength` attribute set on the text area.
+
+## CSS Styles
+
+- The web page uses a simple and responsive design with a salmon background color.
+- The character counter is styled to be user-friendly, with total and remaining character counts.
+
+## HTML Structure
+
+- The web page consists of a container with a title, a text area, and character count elements.
+- JavaScript is used to update the character count in real-time.
+
+## Customization
+
+You can easily customize this web page by modifying the HTML, CSS, and JavaScript to fit your specific needs. For instance, you can change the maximum character limit or adjust the styling.
+
+
 
