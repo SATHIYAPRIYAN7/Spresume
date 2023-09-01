@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    font-family: cursive;
+    background-color: slateblue;
+}
+.calendar-container {
+    background-color: white;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+.month-name {
+    margin: 0;
+    background-color: orangered;
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.day-name {
+    font-size: 20px;
+    color: darkgray;
+}
+.day-number {
+    font-size: 80px;
+    margin: 0;
+    font-weight: bold;
+}
+.year {
+    margin: 20px 0;
+    font-size: 20px;
+    color: darkgray;
+    font-weight: 500;
+}
+</style>
+<body>
+    <div class="calendar-container">
+        <p class="month-name" id="month-name">Sepber</p>
+        <p class="day-name" id="day-name">Fay</p>
+        <p class="day-number" id="day-number">4</p>
+        <p class="year" id="year">2028</p>
+      </div>
+
+      <script>
+        const month=document.getElementById("month-name");
+        const dayName=document.getElementById("day-name");
+        const dayNum=document.getElementById("day-number");
+        const year=document.getElementById("year");
+
+        let today=new Date();
+        console.log(today);
+
+        let allmonth=["January","Febuary","march","April","May","June","July","August","September","October","November","December"]
+
+        let allweek=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+           
+        month.textContent=allmonth[today.getMonth()];
+        dayName.textContent=allweek[today.getDay()];
+        dayNum.textContent=today.getDate();
+        year.textContent=today.getFullYear();
+      </script>
+</body>
+</html>
