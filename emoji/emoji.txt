@@ -1,1 +1,45 @@
+# Emoji Searching Application
+
+## Overview
+
+This is a simple web application that allows users to search for emojis based on their aliases or tags. The application features a user interface with a search bar, a "Search" button, and a results container. Users can enter a search term, click the "Search" button, or type in the search bar to find matching emojis. The matching emojis are displayed below the search bar.
+
+## Code Structure
+
+The code consists of HTML, CSS, and JavaScript components:
+
+1. **CSS Styles**:
+   - CSS styles are defined within the `<style>` tags at the beginning of the code. These styles set the appearance of various elements on the page, including fonts, colors, and layout.
+
+2. **HTML Structure**:
+   - The HTML structure is used to create the layout of the web page. Key elements include:
+     - A main container with the class "main" that holds the application's content.
+     - An `<h1>` heading displaying "Emoji Searching Application."
+     - A horizontal line `<hr>` for visual separation.
+     - A search section with an input field and a "Search" button.
+     - A `div` element with the id "searchResultContainer" to display search results.
+
+3. **JavaScript Functionality**:
+   - The JavaScript code provides the application's functionality. Key features include:
+     - Selecting HTML elements using `getElementById`.
+     - Defining a `searchEmoji` function to filter and display emojis based on user input.
+     - Event listeners for the "Search" button and input field to trigger the `searchEmoji` function.
+     - Populating the "searchResultContainer" with matching emojis.
+
+## Usage
+
+To use the Emoji Searching Application:
+
+1. Open the HTML file (containing the provided code) in a web browser.
+2. Enter a search term in the input field.
+3. Click the "Search" button or press Enter in the input field.
+4. Matching emojis will be displayed below the search bar in the "searchResultContainer."
+
+
+
+- The code assumes the existence of a variable named `emojiList` that contains a list of emojis with aliases, tags, emojis, descriptions, and categories. Ensure that this variable is properly defined and populated with emoji data for the application to function correctly.
+
+- The application automatically calls the `searchEmoji` function when the page loads, so initial emoji data will be displayed.
+
+
 
