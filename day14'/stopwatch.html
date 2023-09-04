@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
+<style>
+    body{
+        background-color: pink;
+       margin:0px;
+       padding: 0px;
+       box-sizing: border-box;
+    }
+    .contain{
+      display: flex;
+      flex-direction: column;
+        font-size: 60px;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .timer{
+        display: flex;
+    }
+    .buttons{
+        background-color: rgb(234, 14, 208);
+        color: white;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="contain">
+        <div class="timer">
+        <div id="hrs">00</div>
+        <div class="colon">:</div>
+        <div id="min">00</div>
+        <div class="colon">:</div>
+        <div id="sec">00</div>
+        <div class="colon">:</div>
+        <div id="ms">00</div></div>
+        <div >
+        <button class="buttons" id="start">Start</button>
+        <button class="buttons" id="stop">Stop</button>
+        <button class="buttons" id="reset">Reset</button>
+    </div>
+    </div>
+
+
+
+
+    <script>
+    const hrs=document.getElementById("hrs");
+    const min=document.getElementById("min");
+    const sec=document.getElementById("sec");
+    const ms=document.getElementById("ms");
+    const start1=document.getElementById("start");
+    const stop1=document.getElementById("stop");
+    const reset=document.getElementById("reset");
+  
+    let qhrs=qmin=qsec=qms=0;
+  let startTimer;
+
+  
+
+
+
+    start1.addEventListener("click",()=>{
+     startTimer=setInterval(()=>{
+        qms++;
+        if(qms===100){
+            qsec++;
+            qms=0;
+        }
+        if(qsec===60){
+            qmin++;
+            qsec=0;
+        }
+        if(qmin===60){
+            qhrs++;
+            qmin=0;
+        }
+        start1.disabled=true;
+       start1.style.opacity="0.5";
+       stop1.style.opacity="1";
+        stop1.disabled=false;
+        updatedisplay();
+     },10)
+    })
+    stop1.addEventListener("click",()=>{
+        clearInterval(startTimer);
+        start1.disabled=false;
+        start1.style.opacity="1";
+        stop1.style.opacity="0.5";
+        stop1.disabled=true;
+    })
+
+    reset.addEventListener("click",()=>{
+        let qhrs=qmin=qsec=qms=0;
+        start1.style.opacity="1";
+        stop1.style.opacity="1";
+        stop1.disabled=false;
+        start1.disabled=false;
+        clearInterval(startTimer)
+        updatedisplay();
+    })
+
+   
+
+
+    function updatedisplay(){
+        hrs.textContent=qhrs<10?"0"+qhrs:qhrs;
+        min.textContent=qmin<10?"0"+qmin:qmin;
+        sec.textContent=qsec<10?"0"+qsec:qsec;
+        ms.textContent=qms<10?"0"+qms:qms;
+    }
+
+
+    </script>
+
+    
+</body>
+</html>
