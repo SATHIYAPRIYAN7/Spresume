@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        background-color: whitesmoke;
+    }
+.int{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    margin-bottom: 40px;
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.search-content{
+    margin: 20px 30px;
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    width: 300px;
+    align-items: center;
+}
+img{
+    width: 300px;
+    height: 300px;
+}
+
+
+#btn{
+    display: flex; 
+    justify-content: center; 
+    margin-top: 50px; 
+}
+#show{
+    display: none;
+    padding: 10px 20px;
+}
+input{
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+button{
+ margin-left: 20px;
+ padding: 0px 20px;
+ border-radius: 10px;
+ background-color: green;
+ color: white;
+ outline: none;
+ border: none;
+}
+
+</style>
+<body>
+    <h1 style="text-align: center;">Image Searcher App</h1>
+    <div class="int">
+        <input type="text" id="input-val" placeholder="serch here">
+        <button id="search-btn">Search</button>
+    </div>
+
+    <div class="wrapper" id="container">
+
+    </div>
+   <div  id="btn">
+    <button id="show">show more</button> 
+</div>
+
+
+<script>
+
+    const key="RZEIOVfPhS7vMLkFdd2TSKGFBS4o9_FmcV1Nje3FSjw";
+
+    const SearchBtn=document.getElementById("search-btn");
+    const searchInput=document.getElementById("input-val");
+     const wrapper=document.getElementById("container");
+     const btn=document.getElementById("show")
+
+          let inputData="";
+          let page=2;
+
+
+    async function search(){
+    inputData=searchInput.value;
+    const url=`https://api.unsplash.com/search/photos?page=${page}&query=${inputData}&client_id=${key}`;
+
+    const response=await fetch(url);
+    const data=await response.json();
+    const results=data.results;
+    if(page===1){
+        wrapper.innerHTML="";
+    }
+    
+
+    results.map((result)=>{
+    const searchContent=document.createElement("div");
+    searchContent.classList.add("search-content")
+    const image=document.createElement("img");
+    const description=document.createElement("h3");
+
+    image.src=result.urls.regular;
+    description.textContent=result.alt_description;
+
+    searchContent.appendChild(image);
+    searchContent.appendChild(description);
+    wrapper.appendChild(searchContent);
+    
+})
+   page++;
+ 
+if(page>1){
+    btn.style.display="flex";
+}
+    };
+
+    
+ console.log(page);
+    SearchBtn.addEventListener("click",()=>{
+    
+        page=1;
+        search();
+        console.log(page);
+    })
+    
+    btn.addEventListener("click",()=>{
+        search();
+    })
+
+</script>
+
+</body>
+</html>
