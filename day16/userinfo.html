@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+    .container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+#info-card {
+    text-align: center;
+}
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+#user-info span {
+    flex: 2;
+    color: #444;
+    text-align: left;
+    padding-left: 10px;
+}
+.label {
+    font-weight: bold;
+}
+</style>
+<body>
+    <div class="container">
+        <div id="info-card">
+            <h1>User Information Card</h1>
+            <div id="user-info">
+                <div class="field">
+                    <span class="label">First Name:</span>
+                    <span id="first-name"></span>
+                </div>
+                <div class="field">
+                    <span class="label">Last Name:</span>
+                    <span id="last-name"></span>
+                </div>
+                <div class="field">
+                    <span class="label">Country:</span>
+                    <span id="country"></span>
+                </div>
+                <div class="field">
+                    <span class="label">Phone Number:</span>
+                    <span id="phone-number"></span>
+                </div>
+                <div class="field">
+                    <span class="label">State:</span>
+                    <span id="state"></span>
+                </div>
+                <div class="field">
+                    <span class="label">City:</span>
+                    <span id="city"></span>
+                </div>
+                <div class="field">
+                    <span class="label">Village:</span>
+                    <span id="village"></span>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        let first=prompt("Enter Your First name:")
+        let second=prompt("Enter your second name:")
+        let country=prompt("Enter your country:")
+        let num=prompt("Enter your Number");
+        let stat=prompt("enter your state");
+        let cit=prompt("enter your city")
+        let vill=prompt("enter your village")
+
+        document.getElementById("first-name").textContent=first;
+        document.getElementById("last-name").textContent=second;
+        document.getElementById("country").textContent=country;
+        document.getElementById("phone-number").textContent=num;
+        document.getElementById("state").textContent=stat;
+        document.getElementById("city").textContent=cit;
+        document.getElementById("village").textContent=vill;
+    </script>
+</body>
+</html>
