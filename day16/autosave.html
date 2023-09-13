@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
+<style>
+    body{
+        background-color: whitesmoke;
+    }
+   div{
+    width: 800px;
+    background-color: white;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   textarea{
+    margin-bottom: 60px;
+   }
+</style>
+<body>
+    <div>
+        <h1>AutoSave Textarea</h1>
+    <textarea  id="input-el" cols="60" rows="15" placeholder="enter here"></textarea>
+    </div>
+
+    <script>
+        const input1=document.getElementById("input-el");
+        
+          function save(){
+        localStorage.setItem("key",input1.value)
+          }
+          if(localStorage.getItem("key")){
+            input1.value=localStorage.getItem("key");
+          }
+      
+        input1.addEventListener("input",save)
+    </script>
+</body>
+</html>
