@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .imageContainer{
+    display: flex;
+    
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+  }
+  img{
+    width: 200px;
+    margin: 30px 100px;
+  }
+  h1{
+    text-align: center;
+  }
+</style>
+<body>
 
+  <h1>Infinite Scroll</h1>
+  <div class="imageContainer" id="contain">
+       
+  </div>
+
+
+  <script>
+    const contain=document.getElementById("contain")
+
+    contain.innerHTML=""
+    
+    async function getImage(n){
+      for(let i=1;i<=n;i++){
+      let res=await fetch("https://source.unsplash.com/random")
+      let url=res.url;
+      contain.innerHTML+=`<img src="${url}" alt="">`
+    }
+}
+
+window.addEventListener("scroll",(e)=>{
+  let{clientHeight,scrollTop,scrollHeight}=e.target.documentElement;
+ if(clientHeight+scrollTop+1>=scrollHeight){
+  getImage(9);
+ }
+})
+    getImage(10);
+  </script>
+</body>
+</html>
