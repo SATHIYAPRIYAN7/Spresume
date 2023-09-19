@@ -1,1 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        background-color: black;
+        color: white;
+        max-width: 1200px;
+        margin: auto;
+    }
+    header{
+        max-width: 1200px;
+    }
+   h1{
+    text-align: center;
+    margin: auto;
+    padding: 20px 0px;
+   }
+   hr{
+    max-width: 1200px;
+    margin: auto;
+   }
+   .search{
+    text-align: center;
+    margin-top: 50px;
+    max-width: ;
+   }
+   input{
+    max-width: 500px;
+    padding: 10px 0px;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 8px;
+    
+   }
+   button{
+    padding: 10px 15px;
+    background-color: yellow;
+    font-weight: bold;
+    border-radius: 5px;
+   }
+   .sara{
+    margin-bottom: 50px;
+   }
+   .movies{
+    width: 200px;
+    height: 250px;
+    background-color: white;
+    margin: 10px;
+    overflow: hidden;
+    color: black;
+   }
+   #movie{
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   }
+   img{
+    width: 100%;
+    height: 180px;
+    margin: auto;
+   border-radius: 0px 0px 10px 10px;
+   border-bottom: black solid 2px;
+   }
+   h3,p{
+    text-align: center;
+   }
+   p{
+    margin-top: 6px;
+   }
+   h2{
+    color: red;
+   }
+</style>
+<body>
+    <div class="header">
+           <h1>MOVIE <span style="color:yellow">SEARCH</span> APP</h1>
+           <hr>
+    </div>
 
+    <div class="search">
+        <div class="sara">
+        <input type="text" id="inputval" placeholder="Search Here">
+        <button id="srch">Search</button></div>
+        <hr>
+    </div>
+
+    <div id="movie">
+       <div class="movies">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvkiEPpRwJoE2MsrEVAnsj7OM1QBlPA_HWvw&usqp=CAU" alt="">
+           <h3 style="color:black">CAPTAIN</h3>
+           <p>Year of Release: 2023</p>
+       </div>
+      
+    </div>
+
+
+
+
+
+    <script>
+      
+     const url="https://www.omdbapi.com/?&apikey=b8332070&s=avatar&page=1"
+
+     const movie1=document.getElementById("movie");
+     const searchBtn=document.getElementById("srch")
+     const inputval=document.getElementById("inputval")
+       movie1.innerHTML="";
+       async function fetchMovie() {
+            const inputValue = inputval.value;
+
+            if (!inputValue) {
+        
+                movie1.innerHTML="<h2>Please Enter a movie Name to Search</h2>"
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://www.omdbapi.com/?apikey=b8332070&s=${inputValue}&page=1`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+movie1.innerHTML="";
+                if (data.Response === "True") {
+                    const movies = data.Search;
+                    movies.forEach(e => {
+                        
+                        movie1.innerHTML += `
+                            <div class="movies">
+                                <img src="${e.Poster}" alt="">
+                                <h3 style="color: black">${e.Title}</h3>
+                                <p>Year of Release: ${e.Year}</p>
+                            </div>
+                        `;
+                    });
+                } else {
+                    console.error(data.Error);
+                }
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+
+     searchBtn.addEventListener("click",()=>{
+        const inputval=document.getElementById("inputval");
+        fetchMovie();
+        inputval.value="";
+
+     })
+
+        // const text=document.getElementById("text");
+        // const word1=document.getElementById("word1");
+        // const word2=document.getElementById("word2");
+    //    word1.innerText="default:";
+    //     text.addEventListener("input",()=>{
+    //         word1.innerText="default:"+text.value;
+    //         debouchetext(text.value)
+    //     })
+
+    //     const  debouchetext= debounce(text=>{
+    //         word2.innerText=text;
+    //     },2501)
+
+    //    function debounce(cb,delay=1000){
+    //     let timeout 
+    //     return(...args)=>{
+    //         clearTimeout(timeout)
+    //         timeout=setTimeout(()=>{
+    //             cb(...args)
+    //         },delay)
+    //     }
+    //    }
+    </script>
+</body>
+</html>
