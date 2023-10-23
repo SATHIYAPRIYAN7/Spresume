@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="
+https://cdn.jsdelivr.net/npm/flaticon@0.1.0/main.min.js
+"></script>
+</head>
+
+<style>
+    body{
+        background-color: black;
+    }
+     
+    .container{
+        max-width: 1200px;
+        margin: auto;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        height: 70px;
+        align-items: center;
+    }
+    
+    .search-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #search{
+        background-color: rgb(79, 78, 78);
+        outline: none;
+        border: none;
+        width: 500px;
+        height: 40px;
+        border-radius: 20px 0px 0px 20px;
+        padding-left: 10px;
+        color: white;
+        caret-color: white;
+    }
+    #search::placeholder{
+         color: white;
+         opacity: 0.3;
+    }
+
+    #srch-btn{
+        background-color: rgb(79, 78, 78);
+        color: white;
+        border: none;
+     margin-right: 20px;
+     border-radius: 0px 20px 20px 0px;
+     height: 42px;
+     padding: 10px;
+    }
+    #location-btn{
+        padding: 10px 20px;
+        border-radius: 30px;
+        background-color: lavender;
+    }
+    .left{
+        color: white;
+        background-color: rgb(79, 78, 78);
+        
+        display: flex;
+        border-radius: 20px; 
+        align-items: center;
+        padding-left: 30px;
+    }
+    main{
+        margin: 100px 50px;
+    }
+
+    .left-sec{
+        margin-right: 90px;
+    }
+
+    .vertical {
+            border-left: 6px solid black;
+            height: 300px;
+            position:absolute;
+            left: 55%;
+        }
+   
+   .main-cont{
+    background-color: rgb(79, 78, 78);
+    display: flex;
+    border-radius:25px;
+   }
+   .right{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    font-size: 30px;
+    padding-left: 50px;
+   }
+</style>
+<body>
+    <div class="container">
+    <div class="header">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.1K46-kdg9OCalKn030u6swHaHa&pid=Api&P=0&h=180" style="width: 100px;">
+
+        <div class="search-div">
+            <input type="text" id="search" class="search" placeholder="search a location">
+           <button id="srch-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+
+        <button id="location-btn"> Current Location <i class="fa fa-crosshairs" aria-hidden="true"></i></button>
+    </div>
+
+
+    <main>
+   <div class="container">
+        <div class="main-cont">
+            <div class="left">
+                
+
+                <div class="left-sec">
+                    <h3 style="font-size: 30px;">Now</h3>
+                <h1 style="font-size: 70px;">35º C</h1> 
+                
+                <h2>Broken Clouds</h2>
+              </div>
+<img src="https://freepngimg.com/thumb/weather/23793-9-weather-photos.png" style="width: 350px;">
+              
+<div class = "vertical"></div>
+            </div>
+          
+       <div class="right" style="color: white;">
+          
+        <h3><i class="fa fa-calendar-check-o" aria-hidden="true"></i>Wednesday 1, Mar</h3>
+        <h3>London</h3>
+
+
+       </div>
+
+
+        </div>
+
+
+   </div>
+
+
+    </main>
+
+</div>
+</body>
+</html>
