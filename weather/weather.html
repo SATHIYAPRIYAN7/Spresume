@@ -107,7 +107,7 @@ https://cdn.jsdelivr.net/npm/flaticon@0.1.0/main.min.js
 
         <div class="search-div">
             <input type="text" id="search" class="search" placeholder="search a location">
-           <button id="srch-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+           <button id="srch-btn" onclick="search()"><i class="fa fa-search" aria-hidden="true"></i></button>
         </div>
 
         <button id="location-btn"> Current Location <i class="fa fa-crosshairs" aria-hidden="true"></i></button>
@@ -122,9 +122,9 @@ https://cdn.jsdelivr.net/npm/flaticon@0.1.0/main.min.js
 
                 <div class="left-sec">
                     <h3 style="font-size: 30px;">Now</h3>
-                <h1 style="font-size: 70px;">35º C</h1> 
+                <h1 style="font-size: 70px;" id="deg"></h1> 
                 
-                <h2>Broken Clouds</h2>
+                <h2 id="description">Broken Clouds</h2>
               </div>
 <img src="https://freepngimg.com/thumb/weather/23793-9-weather-photos.png" style="width: 350px;">
               
@@ -133,8 +133,8 @@ https://cdn.jsdelivr.net/npm/flaticon@0.1.0/main.min.js
           
        <div class="right" style="color: white;">
           
-        <h3><i class="fa fa-calendar-check-o" aria-hidden="true"></i>Wednesday 1, Mar</h3>
-        <h3>London</h3>
+        <h3 id="tdate"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>Wednesday 1, Mar</h3>
+        <h3 id="name"></h3>
 
 
        </div>
@@ -147,6 +147,105 @@ https://cdn.jsdelivr.net/npm/flaticon@0.1.0/main.min.js
 
 
     </main>
+
+
+    <script>
+const api_key="71637dae67d9e898247d48c69a4a7f9a"
+const base_url="https://api.openweathermap.org/data/2.5/";
+
+
+const cname=document.getElementById("name");
+const tdate=document.getElementById("tdate");
+const deg=document.getElementById("deg");
+const description=document.getElementById("description");
+const search1=document.getElementById("search");
+const currbtn=document.getElementById("location-btn");
+
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+
+var today = new Date();
+var dd = today.getDate();
+var dayname=today.getDay();
+var mm =today.getMonth();  //January is 0!
+var yyyy = today.getFullYear();
+
+kk = mm + '/' + dd + '/' + yyyy;
+console.log(dayname);
+tdate.innerHTML=`${days[dayname]} ${dd},${months[mm]}`
+
+
+let lon,lat;
+function getCurrent(){
+
+    const location=navigator.geolocation.getCurrentPosition(async(result)=>{
+         let loc=result.coords;
+        lat =loc.latitude;
+        lon=loc.longitude; 
+        const data=await fetch(`${base_url}weather?lat=${lat}&lon=${lon}&appid=${api_key}`);
+        const response=await data.json();
+        console.log(response.weather[0].description)
+   let temp=response.main.temp -273.15;
+     let arr=temp.toString().split(".");
+
+     console.log(arr)
+          cname.innerHTML=response.name;
+         deg.innerHTML=`${arr[0]}º C`
+         description.innerHTML=response.weather[0].description;
+
+    })
+}
+
+
+getCurrent(); 
+
+
+async function search(){
+
+            let searchtext=search1.value;
+            console.log(searchtext)
+         let data= await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchtext}&appid=${api_key}`)
+
+         let response= await data.json();
+         
+         console.log(response)
+         let temp=response.main.temp -273.15;
+     let arr=temp.toString().split(".");
+
+     console.log(arr)
+          cname.innerHTML=response.name;
+         deg.innerHTML=`${arr[0]}º C`
+         description.innerHTML=response.weather[0].description;
+
+}
+
+currbtn.addEventListener("click", ()=>{
+    getCurrent();
+})
+
+
+    </script>
 
 </div>
 </body>
