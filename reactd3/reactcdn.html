@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel Standalone -->
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const rootElement = document.getElementById("root");
+    const root = ReactDOM.createRoot(rootElement);
+
+    function One1() {
+
+      
+      return (
+        <div>
+          <div >
+            <h1>Topics covered</h1>
+            <p>The following is a list of all the topics we cover in the MDN learning area.</p>
+            <div>
+              <p><a href="">Getting started with the web</a></p>
+            <p>Provides a practical introduction to web development for complete beginners</p></div>
+          <div>
+            <p><a href="">HTML- Structuring the web</a></p>
+            <p>HTML is the language that we use to structure the different parts of our content and define what their meaning or purpose is.This topic teaches HTML in detail.</p></div>
+
+           <div>
+            <p><a href="">CSS-Styling the web</a></p>
+            <p>CSS is the language that we use o control our content's style and layout,as well as adding behaviour like animation.This topic provides comprehensive coverage of CSS.
+</p></div>
+          </div>
+        </div>
+      );
+    }
+
+    root.render(<One1 />);
+  </script>
+</body>
+</html>
